@@ -7,6 +7,7 @@ SET LINESIZE 10000;
 SET TAB OFF;
 SET PAGES 0;
 SET DEFINE OFF;
+SET SERVEROUTPUT ON;
 /*
 declare
     s Employees.Salary%type;
@@ -32,6 +33,11 @@ end;
 /
 
 exit;
+
+    for t in (select name,grade from Employees)
+    loop 
+       dbms_output.put_line(t.name || t.grade);
+    end loop;
 
 */
 
