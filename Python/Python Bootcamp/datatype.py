@@ -1,0 +1,9 @@
+a=10
+print(type(a))
+b=20.22
+print(type(b))
+print(type(5+8j))
+x=True
+print(type(x))
+g="abc"
+print(type(g))

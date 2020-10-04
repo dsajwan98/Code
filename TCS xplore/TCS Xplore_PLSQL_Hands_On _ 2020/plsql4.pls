@@ -8,7 +8,7 @@ SET TAB OFF;
 SET PAGES 0;
 SET DEFINE OFF;
 SET SERVEROUTPUT ON;
-/*
+
 declare
     s Employees.Salary%type;
     n Employees.Name%type;
@@ -19,7 +19,7 @@ begin
         fetch c into n,s;
         exit when c%notfound;
         if(s >=30000) then
-            dbms_output.put_line(n ||' '||'Senior manager');
+            dbms_output.put_line(n ||' Senior manager');
         elsif(s <30000 and s >=25000) then
             dbms_output.put_line(n ||' Middle manager');
         elsif(s<25000 and s >=20000) then
@@ -33,13 +33,13 @@ end;
 /
 
 exit;
-
+/*
     for t in (select name,grade from Employees)
     loop 
        dbms_output.put_line(t.name || t.grade);
     end loop;
 
-*/
+
 
 alter table Employees add Grade varchar(255);
 update Employees
@@ -52,3 +52,4 @@ update Employees
 set Grade='Team member' where Salary<20000;
 select Name,Grade from Employees;
 exit;
+*/
